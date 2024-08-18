@@ -1,0 +1,16 @@
+## when we have both application-default.properties and application.properties
+* when profile is set to dev (not default), only application.properties is also referred as secondary and error thrown for those values only in application-default.properties
+* when profile is set to default, applications.properties is also checked - as secondary
+* when profile is not set, application-default is picked as primary and application.properties as secondary
+
+## when only application-default.properties is present and no application.properties 
+* when profile is set to dev (not default), error thrown for those values only in application-default.properties
+
+## preference : application-dev.properties > applications.properties, when specific profile is active
+## preference goes to latter(say, in example to prod), when two specified : -Dspring.profiles.active=dev,prod
+## preference : Context parameter in web.xml > WebApplicationInitializer > JVM System parameter > Environment variable > Maven profile
+
+## VM or JVM Params : -Dspring.profiles.active=dev
+
+
+  
